@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+	--Linear-Gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	--Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+	--Light-Grayish-Blue: hsl(234, 14%, 74%);
+	--Grayish-Blue: hsl(233, 13%, 49%);
+	--Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+
+}
+body {
+	background-image: url(./images/bg-bottom.svg);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color: var(--Very-Light-Grayish-Blue);
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	width: 100%;
+	background-image: url(./images/bg-top.svg);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+.pricing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 90px;
+}
+.pricing h3 {
+	font-size: 1.7em;
+	color: var(--Grayish-Blue);
+	margin-bottom: 25px;
+	font-weight: 700;
+}
+.pricing p {
+	color: var(--Light-Grayish-Blue);
+}
+/* .year-price {
+	display: none;
+} */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 24px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.dollar {
+	font-size: 24px;
+	
+}
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background-color: hsl(237, 63%, 64%);
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 20px;
+	
+	
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 4px;
+	bottom: 3px;
+	background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background: var(--Linear-Gradient);
+}
+.slider:hover {
+	background: hsla(237, 63%, 64%, .55)
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.pricing-selection {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card {
+	text-align: center;
+	min-width: 350px;
+	
+	padding: 20px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+}
+.card h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4em;
+	
+}
+.card-1 {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.card-2 {
+	padding-top: 56px;
+	padding-bottom: 56px;
+	background: var(--Linear-Gradient);
+	color:var(--Very-Light-Grayish-Blue);
+}
+.card-3 {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.card-1,
+.card-3 {
+	background-color: white;
+	padding: 25px;
+}
+.storage {
+	display: flex;
+	flex-direction: column;
+	margin-top: 15px;
+	
+}
+.storage p{
+	border-bottom: 1px solid var(--Dark-Grayish-Blue);
+	padding: 15px;
+}
+.storage>p:nth-child(1){
+	border-top: 1px solid var(--Dark-Grayish-Blue);
+}
+.storage-2 p {
+	border-bottom: 1px solid white;
+}
+.storage-2>p:nth-child(1){
+	border-top: 1px solid white;
+}
+.card-btn {
+	margin-top: 25px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	font-weight: 300;
+}
+.card-btn-1,
+.card-btn-3 {
+	color: white;
+	background: var(--Linear-Gradient);
+}
+.card-btn-1:hover,
+.card-btn-3:hover {
+	color: hsl(237, 63%, 64%);
+	background: white;
+	border: 1px solid hsl(237, 63%, 64%);
+}
+.card-btn-2 {
+	background-color: white;
+	color: hsl(237, 63%, 64%);
+}
+.card-btn-2:hover {
+	background-color: hsl(237, 63%, 64%);
+	color: white;
+	border: 1px solid white;
+}
+@media (max-width: 1050px){
+	.card {
+		margin: 15px;
+		width: 95%;
+	}
+	.card-container {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+	}
+	.card-2 {
+		transform: scale(1);
+	}
+}
+@media(max-width: 768px){
+	.card-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	
+	.card-2{
+		transform: scale(1);
+	}
+	.card {
+		margin: 15px;
+		width: 90%;
+	}
+}
